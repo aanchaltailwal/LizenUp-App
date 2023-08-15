@@ -3,70 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spotify - Your favourite Music is here</title>
+    <title>LizenUp - Your favourite Music is here</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav>
         <ul>
-            <li class="brand"><img src="slogo4.jpg" alt="Spotify">Spotify</li>
-            <li>Home</li>
-            <li>About</li>
+            <li class="brand"><img src="Llogo.png" alt="Spotify">LizenUp</li>
         </ul>
     </nav>
     <div class="container">
         <div class="songList">
-            <h2>Best of NCS - No Copyright Sounds</h2>
+            <h2>Playlist Of Your Choice</h2>
             <div class="songItemsContainer">
                 <div class="songItems">
-                    <img src="cover.jpg" alt="1">
-                    <span>Let me love You</span>
-                    <span class="songlistplay"><span class="timestamp">05:34 <i class="fa-regular fa-circle-play"></i></span></span>
+                    <img alt="1">
+                    <span class="songName">Let me love You</span>
+                    <span class="songlistplay"><span class="timestamp">03:24 <i id="0" class="fa-regular songItemPlay fa-circle-play"></i></span></span>
                 </div>
                 <div class="songItems">
-                    <img src="cover.jpg" alt="1">
-                    <span>Let me love You</span>
-                    <span class="songlistplay"><span class="timestamp">05:34 <i class="fa-regular fa-circle-play"></i></span></span>
+                    <img alt="1">
+                    <span class="songName">Channa Ve</span>
+                    <span class="songlistplay"><span class="timestamp">03:30 <i id="1" class="fa-regular songItemPlay fa-circle-play"></i></span></span>
                 </div>
                 <div class="songItems">
-                    <img src="cover.jpg" alt="1">
-                    <span>Let me love You</span>
-                    <span class="songlistplay"><span class="timestamp">05:34 <i class="fa-regular fa-circle-play"></i></span></span>
+                    <img alt="1">
+                    <span class="songName">Jannatein Kahan</span>
+                    <span class="songlistplay"><span class="timestamp">03:48 <i id="2" class="fa-regular songItemPlay fa-circle-play"></i></span></span>
                 </div>
                 <div class="songItems">
-                    <img src="cover.jpg" alt="1">
-                    <span>Let me love You</span>
-                    <span class="songlistplay"><span class="timestamp">05:34 <i class="fa-regular fa-circle-play"></i></span></span>
+                    <img alt="1">
+                    <span class="songName">Kabira</span>
+                    <span class="songlistplay"><span class="timestamp">03:43 <i id="3" class="fa-regular songItemPlay fa-circle-play"></i></span></span>
                 </div>
                 <div class="songItems">
-                    <img src="cover.jpg" alt="1">
-                    <span>Let me love You</span>
-                    <span class="songlistplay"><span class="timestamp">05:34 <i class="fa-regular fa-circle-play"></i></span></span>
+                    <img alt="1">
+                    <span class="songName">Saware</span>
+                    <span class="songlistplay"><span class="timestamp">05:21 <i id="4" class="fa-regular songItemPlay fa-circle-play"></i></span></span>
                 </div>
                 <div class="songItems">
-                    <img src="cover.jpg" alt="1">
-                    <span>Let me love You</span>
-                    <span class="songlistplay"><span class="timestamp">05:34 <i class="fa-regular fa-circle-play"></i></span></span>
+                    <img alt="1">
+                    <span class="songName">Sayad</span>
+                    <span class="songlistplay"><span class="timestamp">04:07 <i id="5" class="fa-regular songItemPlay fa-circle-play"></i></span></span>
                 </div>
                 <div class="songItems">
-                    <img src="cover.jpg" alt="1">
-                    <span>Let me love You</span>
-                    <span class="songlistplay"><span class="timestamp">05:34 <i class="fa-regular fa-circle-play"></i></span></span>
+                    <img alt="1">
+                    <span class="songName">Soch Na Sake</span>
+                    <span class="songlistplay"><span class="timestamp">04:41 <i id="6" class="fa-regular songItemPlay fa-circle-play"></i></span></span>
                 </div>
                 <div class="songItems">
-                    <img src="cover.jpg" alt="1">
-                    <span>Let me love You</span>
-                    <span class="songlistplay"><span class="timestamp">05:34 <i class="fa-regular fa-circle-play"></i></span></span>
+                    <img alt="1">
+                    <span class="songName">Teri Yaad</span>
+                    <span class="songlistplay"><span class="timestamp">03:51 <i id="7" class="fa-regular songItemPlay fa-circle-play"></i></span></span>
                 </div>
                 <div class="songItems">
-                    <img src="cover.jpg" alt="1">
-                    <span>Let me love You</span>
-                    <span class="songlistplay"><span class="timestamp">05:34 <i class="fa-regular fa-circle-play"></i></span></span>
+                    <img alt="1">
+                    <span class="songName">Tune Jo Na Kaha</span>
+                    <span class="songlistplay"><span class="timestamp">05:10 <i id="8" class="fa-regular songItemPlay fa-circle-play"></i></span></span>
                 </div>
                 <div class="songItems">
-                    <img src="cover.jpg" alt="1">
-                    <span>Let me love You</span>
-                    <span class="songlistplay"><span class="timestamp">05:34 <i class="fa-regular fa-circle-play"></i></span></span>
+                    <img alt="1">
+                    <span class="songName">Iraaday</span>
+                    <span class="songlistplay"><span class="timestamp">02:12 <i id="9" class="fa-regular songItemPlay fa-circle-play"></i></span></span>
                 </div>
             </div>
         </div>
@@ -77,12 +75,12 @@
         <input type="range" name="range" id="myProgressBar" min="0" value="0" max="100">
         <div class="icons">
             <!--fontawesome icons -->
-            <i class="fa-solid fa-3x fa-backward-fast"></i>
+            <i class="fa-solid fa-3x fa-backward-fast" id="previous"></i>
             <i class="fa-regular fa-3x fa-circle-play" id="masterPlay"></i>
-            <i class="fa-solid fa-3x fa-forward-fast"></i>
+            <i class="fa-solid fa-3x fa-forward-fast" id="next"></i>
         </div>
         <div class="songInfo">
-            <img src="GIF2.gif" width="100px" alt="" id="gif"> Let Me Love You- Justin Beiber
+            <img src="GIF2.gif" width="100px" alt="" id="gif"><span id="masterSongName">Let me love You</span> 
         </div>
     </div>
     <script src="https://kit.fontawesome.com/d6c3819555.js"crossorigin="anonymous"></script>

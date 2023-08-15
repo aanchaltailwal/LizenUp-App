@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Trirong');
 
 body{
-    background-color: antiquewhite;
+    background-color: aquamarine;
 }
 *{
     margin: 0;
@@ -24,7 +24,7 @@ nav ul li{
     padding: 0 12px;
 }
 .brand img{
-    width: 65px;
+    width: 95px;
     padding: 0 10px;
 }
 .brand{
@@ -68,14 +68,14 @@ nav ul li{
     cursor: pointer;
 }
 .songItemsContainer{
-    margin-top: 54px;
+    margin-top: 34px;
 }
 .songItems{
     height: 50px;
     display: flex;
     background-color: white;
     color: black;
-    margin: 5px 0;
+    margin: 7px 0;
     justify-content: space-between;
     align-items: center;
     border-radius: 34px;
@@ -99,5 +99,10 @@ nav ul li{
 .songInfo img{
     opacity: 0;
     transition: opacity is ease-in;
+    font-family: "Audiowide", sans-serif;
+}
+.songInfo img {
+    opacity: 0;
+    transition: opacity ease-in;
     font-family: "Audiowide", sans-serif;
 }

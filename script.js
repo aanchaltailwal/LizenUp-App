@@ -2,22 +2,32 @@ console.log("Welcome to Spotify");
 
 //initialize the variables
 let songIndex = 0;
-let audioElement = new Audio('1.mp3');
-let masterPlay = document.getElementById('masterPlay');
+let audioElement = new Audio('songs/1.mp3');
+let masterPlay = document.getElementById('masterPlay'); 
 let myProgressbar = document.getElementById('myProgressbar');
 let gif = document.getElementById('gif');
+let masterSongName = document.getElementById('masterSongName');
+let songItems = Array.from(document.getElementsByClassName('songItems'));
 
 let songs =[
-    {songname: "Tujhe Kitna Chahne Lage", filePath: "song/1.mp3", coverPath: "covers/1.jpg"},
-    {songname: "Tujhe Kitna Chahne Lage", filePath: "song/1.mp3", coverPath: "covers/1.jpg"},
-    {songname: "Tujhe Kitna Chahne Lage", filePath: "song/1.mp3", coverPath: "covers/1.jpg"},
-    {songname: "Tujhe Kitna Chahne Lage", filePath: "song/1.mp3", coverPath: "covers/1.jpg"},
-    {songname: "Tujhe Kitna Chahne Lage", filePath: "song/1.mp3", coverPath: "covers/1.jpg"},
-    {songname: "Tujhe Kitna Chahne Lage", filePath: "song/1.mp3", coverPath: "covers/1.jpg"},
-    {songname: "Tujhe Kitna Chahne Lage", filePath: "song/1.mp3", coverPath: "covers/1.jpg"},
-    {songname: "Tujhe Kitna Chahne Lage", filePath: "song/1.mp3", coverPath: "covers/1.jpg"},
-    {songname: "Tujhe Kitna Chahne Lage", filePath: "song/1.mp3", coverPath: "covers/1.jpg"},
+    {songname: "Let me love You", filePath: "songs/1.mp3", coverPath: "covers/1.jpg"},
+    {songname: "Channa Ve", filePath: "songs/2.mp3", coverPath: "covers/2.jpg"},
+    {songname: "Jannatein Kahan", filePath: "songs/3.mp3", coverPath: "covers/3.jpg"},
+    {songname: "Kabira", filePath: "songs/4.mp3", coverPath: "covers/4.jpg"},
+    {songname: "Saware", filePath: "songs/5.mp3", coverPath: "covers/5.jpg"},
+    {songname: "Sayad", filePath: "songs/6.mp3", coverPath: "covers/6.jpg"},
+    {songname: "Soch Na Sake", filePath: "songs/7.mp3", coverPath: "covers/7.jpg"},
+    {songname: "Teri Yaad", filePath: "songs/8.mp3", coverPath: "covers/8.jpg"},
+    {songname: "Tune Jo Na Kaha", filePath: "songs/9.mp3", coverPath: "covers/9.jpg"},
+    {songname: "Iraaday", filePath: "songs/10.mp3", coverPath: "covers/10.jpg"},
 ]
+
+
+songItems.forEach((element, index) => {
+    element.getElementsByTagName("img")[0].src = songs[index].coverPath;
+    element.getElementsByClassName("songName")[0].innerText = songs[index].songname;
+});
+
 
 //audioElement.play();
 
@@ -48,3 +58,64 @@ audioElement.addEventListener('timeupdate', ()=>{
 myProgressBar.addEventListener('change', ()=>{
     audioElement.currentTime = myProgressBar.value * audioElement.duration/100;
 })
+
+const makeAllPlays = ()=>{
+    Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
+        element.classList.remove('fa-circle-pause');
+        element.classList.add('fa-circle-play');
+
+    })
+}
+// ... (previous code)
+
+Array.from(document.getElementsByClassName('songItemPlay')).forEach((element) => {
+    element.addEventListener('click', (e) => {
+        makeAllPlays();
+        songIndex = parseInt(e.target.id);
+        e.target.classList.remove('fa-circle-play');
+        e.target.classList.add('fa-circle-pause');
+        audioElement.src = `songs/${songIndex+1}.mp3`; // Use backticks for template literals
+        masterSongName.innerText = songs[songIndex].songname;
+        audioElement.currentTime = 0;
+        audioElement.play(); // Play the audio
+        masterPlay.classList.remove('fa-circle-play');
+        masterPlay.classList.add('fa-circle-pause');
+        gif.style.opacity = 1; // Show the GIF
+    });
+});
+
+document.getElementById('next').addEventListener('click', () => {
+    if (songIndex >= songs.length - 1) {
+        songIndex = 0;
+    } else {
+        songIndex += 1;
+    }
+    audioElement.src = songs[songIndex].filePath;
+    masterSongName.innerText = songs[songIndex].songname;
+    audioElement.currentTime = 0;
+    audioElement.play();
+    masterPlay.classList.remove('fa-circle-play');
+    masterPlay.classList.add('fa-circle-pause');
+    gif.style.opacity = 1;
+});
+
+document.getElementById('previous').addEventListener('click', () => {
+    if (songIndex <= 0) {
+        songIndex = songs.length - 1;
+    } else {
+        songIndex -= 1;
+    }
+    audioElement.src = songs[songIndex].filePath;
+    masterSongName.innerText = songs[songIndex].songname;
+    audioElement.currentTime = 0;
+    audioElement.play();
+    masterPlay.classList.remove('fa-circle-play');
+    masterPlay.classList.add('fa-circle-pause');
+    gif.style.opacity = 1;
+});
+
+
+
+
+
+
