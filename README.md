@@ -21,7 +21,7 @@ A live demo of the LizenUp app is available at https://lizenup.netlify.app/
 ## Getting Started
 To run the LizenUp app locally, follow these steps:
 
-- Clone this repository: git clone https://github.com/your-username/your-repo-name.git
+- Clone this repository: git clone https://github.com/aanchaltailwal/LizenUp-App
 - Navigate to the project directory: cd your-repo-name
 - Open the index.html file in your web browser.
 - Alternatively, you can view the app live at https://lizenup.netlify.app/
